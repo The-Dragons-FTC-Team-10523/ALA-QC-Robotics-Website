@@ -1,7 +1,7 @@
 'use client'
 
 import { Canvas } from '@react-three/fiber'
-// Import the new components
+// Import the new component
 import { OrbitControls, Preload, Loader } from '@react-three/drei'
 import { RobotModel } from './Model' // Import the new Model component
 import React, { Suspense } from 'react'
@@ -29,7 +29,7 @@ export default function RobotViewer() {
                 </Suspense>
 
                 <OrbitControls
-                    autoRotate
+                    // autoRotate
                     enablePan={false}
                     enableZoom={false}
                     target={[0, 0, 0]}

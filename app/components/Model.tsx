@@ -8,7 +8,7 @@ export function RobotModel(props) {
     const { scene } = useGLTF('/hat-transformed.glb')
 
     // Apply rotation fix
-    const rotationFix = [-Math.PI / 2, Math.PI, 0];
+    const rotationFix = [-Math.PI / 2, 0, -1.2];
 
     return (
         <Center top>
