@@ -2,6 +2,7 @@
 import { useGLTF, Center } from '@react-three/drei'
 import React from 'react'
 
+// @ts-expect-error because props is any
 export function RobotModel(props) {
     // R3F handles the loading of this asset via useGLTF
     const { scene } = useGLTF('/hat-transformed.glb')
