@@ -32,13 +32,14 @@ export default function RobotViewer() {
 
                     {/* This is where the model is rendered */}
 
-                    <Stage environment="city" intensity={0.6}>
+                    {/*<Stage environment="city" intensity={0.6}>*/}
                         {/* ROTATION FIX:
             [-Math.PI / 2, 0, 0] rotates it -90 degrees on X to stand it up.
             If it is upside down, change the minus (-) to a plus (+).
-          */}
+          */}           <ambientLight intensity={0.5} />
+                               <pointLight position={[10, 10, 10]} />
                         <RobotModel />
-                    </Stage>
+                    {/*</Stage>*/}
 
                     {/* 2. The Preload component tells R3F to start loading all assets
              (like hat-transformed.glb) as soon as the app starts. */}
