@@ -1,9 +1,8 @@
 'use client'
 
 import {Canvas} from '@react-three/fiber'
-// Import the new component
 import {Loader, OrbitControls, Preload, Stage} from '@react-three/drei'
-import {RobotModel} from './Model' // Import the new Model component
+import {RobotModel} from './Model'
 import React, {Suspense} from 'react'
 
 export default function RobotViewer() {
@@ -21,8 +20,7 @@ export default function RobotViewer() {
                         <RobotModel/>
                     </Stage>
 
-                    {/* 2. The Preload component tells R3F to start loading all assets
-             (like hat-transformed.glb) as soon as the app starts. */}
+                    {/* Preloads the robot assets on load*/}
                     <Preload all/>
                 </Suspense>
 

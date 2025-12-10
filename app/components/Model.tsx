@@ -5,7 +5,7 @@ import React from 'react'
 // @ts-expect-error because props is any
 export function RobotModel(props) {
     // R3F handles the loading of this asset via useGLTF
-    const { scene } = useGLTF('/hat-transformed.glb')
+    const { scene } = useGLTF('/Dato.glb')
 
     // Apply rotation fix
     const rotationFix = [-Math.PI / 2, 0, -1.2];
