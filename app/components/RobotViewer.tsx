@@ -2,7 +2,7 @@
 
 import { Canvas } from '@react-three/fiber'
 // Import the new component
-import { OrbitControls, Preload, Loader } from '@react-three/drei'
+import {OrbitControls, Preload, Loader, Stage} from '@react-three/drei'
 import { RobotModel } from './Model' // Import the new Model component
 import React, { Suspense } from 'react'
 
@@ -15,13 +15,30 @@ export default function RobotViewer() {
             >
                 <color attach="background" args={['#101010']} />
 
-                {/* 1. Use Suspense to handle the initial loading state */}
+             {/*   /!* 1. Use Suspense to handle the initial loading state *!/*/}
+             {/*   <Suspense fallback={null}>*/}
+             {/*       <ambientLight intensity={0.5} />*/}
+             {/*       <pointLight position={[10, 10, 10]} />*/}
+
+             {/*       /!* This is where the model is rendered *!/*/}
+             {/*       <RobotModel />*/}
+
+             {/*       /!* 2. The Preload component tells R3F to start loading all assets*/}
+             {/*(like hat-transformed.glb) as soon as the app starts. *!/*/}
+             {/*       <Preload all />*/}
+             {/*   </Suspense>*/}
+
                 <Suspense fallback={null}>
-                    <ambientLight intensity={0.5} />
-                    <pointLight position={[10, 10, 10]} />
 
                     {/* This is where the model is rendered */}
-                    <RobotModel />
+
+                    <Stage environment="city" intensity={0.6}>
+                        {/* ROTATION FIX:
+            [-Math.PI / 2, 0, 0] rotates it -90 degrees on X to stand it up.
+            If it is upside down, change the minus (-) to a plus (+).
+          */}
+                        <RobotModel />
+                    </Stage>
 
                     {/* 2. The Preload component tells R3F to start loading all assets
              (like hat-transformed.glb) as soon as the app starts. */}
